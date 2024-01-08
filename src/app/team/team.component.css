@@ -1,0 +1,21 @@
+.teams{
+    text-align: center;
+    margin-right: 15%;
+    margin-left: 15%;
+    margin-top: 2%;
+    background-color: white;
+}
+img{
+    height: 15%;
+    width: 15%;
+}
+button {
+       margin-top: 20px;
+    margin-left: 75%
+}
+
+button:hover{
+    color: #ffffff;
+    background-color: rgb(67, 64, 243);
+    border: 1px solid;
+}

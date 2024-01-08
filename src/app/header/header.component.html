@@ -1,0 +1,12 @@
+<header>
+    <nav>
+        <ul>
+            <li>
+                <button *ngFor="let country of selectedCountries" (click)="redirectToLeagues(country)" id="italySelect"
+                    routerLinkActive="router-active">
+                    {{country.name}}
+                </button>
+            </li>
+        </ul>
+    </nav>
+</header>

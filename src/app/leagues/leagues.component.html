@@ -1,0 +1,37 @@
+<div class="league"  *ngIf="selectedLeagues" >
+    <table class="table">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col"></th>
+            <th scope="col">Name</th>
+            <th scope="col">Games</th>
+            <th scope="col">W</th>
+            <th scope="col">L</th>
+            <th scope="col">D</th>
+            <th scope="col">Goal Difference</th>
+            <th scope="col">Points</th>
+          </tr>
+        </thead>
+        
+            <ng-container *ngFor="let league of selectedLeagues[0].league?.standings; index as i;">
+                <tbody>
+                 <tr *ngFor="let st of league; index as j;"> 
+                    <th >{{j}}</th>
+                    <td><img [src]="st.team?.logo" alt="Team Logo" *ngIf="st.team?.logo" /></td>
+                    <td style="cursor: pointer;" (click)="showTeamDetails(st?.team?.id)">{{st?.team?.name}}</td>
+                    <td>{{st?.all?.played}}</td>
+                    <td>{{st?.all?.win}}</td>
+                    <td>{{st?.all?.lose}}</td>
+                    <td>{{st?.all?.draw}}</td>
+                    <td>{{st?.goalsDiff}}</td>
+                    <td>{{st?.points}}</td>
+                  </tr> 
+                </tbody>   
+            </ng-container>
+
+    
+         
+      
+      </table>
+</div>

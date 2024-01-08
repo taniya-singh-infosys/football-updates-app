@@ -1,0 +1,20 @@
+  <button type="button"  class="btn btn-primary"[routerLink]="['/leagues', return_value]">Back To Leagues </button>
+    <div class="teams">
+      <table class="table">
+        <ng-container *ngFor="let team of teams ;index as i">
+                    <tbody>
+                        <tr *ngIf="i<10">
+                             <td><img [src]="team.teams.home.logo" alt="Team Logo" *ngIf="team.teams.home.logo" /></td> 
+                            <td>{{team.teams.home.name}}</td>
+                            <td>{{team.goals.home}} - {{team.goals.away}}</td>
+                            <td>{{team.teams.away.name}}</td>
+                            <td><img [src]="team.teams.away.logo" alt="Team Logo" *ngIf="team.teams.away.logo" /></td>  
+                        </tr>
+                    </tbody>           
+        </ng-container>
+    </table>
+    </div>
+    
+
+
+  
