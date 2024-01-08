@@ -20,6 +20,7 @@ export class HeaderComponent implements OnInit{
     var countriesFromStorage= localStorage.getItem('countries')
     if(!countriesFromStorage) {
       this.appService.getCounties().subscribe(data=>{
+        localStorage.setItem(`countries`, JSON.stringify(data.response));
          this.countries=data.response
          if(this.countries)this.getFilteredCountries()
       })
