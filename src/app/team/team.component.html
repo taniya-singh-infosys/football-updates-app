@@ -1,5 +1,7 @@
   <button type="button"  class="btn btn-primary"[routerLink]="['/leagues', return_value]">Back To Leagues </button>
     <div class="teams">
+      <div class="table-responsive">
+
       <table class="table">
         <ng-container *ngFor="let team of teams ;index as i">
                     <tbody>
@@ -14,7 +16,7 @@
         </ng-container>
     </table>
     </div>
-    
+    </div>
 
 
   

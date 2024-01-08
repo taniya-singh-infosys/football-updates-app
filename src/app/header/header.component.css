@@ -11,11 +11,12 @@ header {
 button {
     padding: 9px;
     width: 10%;
-    border: 1px solid;
+    border: none;
     border-radius: 6px;
     margin-top: 1%;
     margin-right: inherit;
-
+    white-space: normal;
+    font-size: 1.0rem;
 }
 
 .router-active{
@@ -34,4 +35,7 @@ nav li {
 }
 ul{
     white-space:nowrap;
+    display: flex;
+    align-content: center;
+    justify-content: center;
 }
