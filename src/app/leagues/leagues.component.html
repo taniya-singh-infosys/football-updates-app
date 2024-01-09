@@ -4,7 +4,7 @@
         <thead class="thead-dark">
           <tr>
             <th scope="col">#</th>
-            <th scope="col"></th>
+            <th scope="col">Logo</th>
             <th scope="col">Name</th>
             <th scope="col">Games</th>
             <th scope="col">W</th>
@@ -19,7 +19,7 @@
                 <tbody>
                  <tr *ngFor="let st of league; index as j;"> 
                     <th >{{j}}</th>
-                    <td><img [src]="st.team?.logo" alt="Team Logo" *ngIf="st.team?.logo" /></td>
+                    <td class="logo"><img [src]="st.team?.logo" alt="Team Logo" *ngIf="st.team?.logo" /></td>
                     <td style="cursor: pointer;" (click)="showTeamDetails(st?.team?.id)">{{st?.team?.name}}</td>
                     <td>{{st?.all?.played}}</td>
                     <td>{{st?.all?.win}}</td>

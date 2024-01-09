@@ -5,17 +5,22 @@
     margin-top: 2%;
     background-color: white;
 }
-img{
-    height: 15%;
-    width: 15%;
-}
 button {
        margin-top: 20px;
-    margin-left: 75%
+    margin-left: 70%
 }
 
 button:hover{
     color: #ffffff;
     background-color: rgb(67, 64, 243);
     border: 1px solid;
+}
+img{
+    height: 40px;
+}
+.logo{
+    min-height: 20px;
+}
+td.min{
+    width: 10%;
 }

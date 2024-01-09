@@ -1,7 +1,7 @@
 export interface CountryModel{
-    code?:String,
-    flag?:String,
-    name?:String
+    code?:string,
+    flag?:string,
+    name?:string
 }
 
 export interface ApiCountry  {

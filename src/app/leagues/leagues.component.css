@@ -5,6 +5,8 @@ margin-top:2%;
 background-color: white;
 }
 img{
-    height: 15%;
-    width: 15%;
+    height: 40px;
+}
+.logo{
+    min-height: 20px;
 }

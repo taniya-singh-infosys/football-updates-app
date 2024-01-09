@@ -32,13 +32,13 @@ export class HeaderComponent implements OnInit{
   getFilteredCountries(){
     this.countries.filter((item:CountryModel)=>{
       if(item.name=='England' || item.name=='Spain' || item.name=='Germany' || item.name=='France' || item.name=='Italy'){
+        item.name=item.name.toLowerCase()
         this.selectedCountries.push(item)
       }
     })
   }
   redirectToLeagues(country:CountryModel){
     this.router.navigate([`/leagues/${country.name}`])
-
   }
 
 

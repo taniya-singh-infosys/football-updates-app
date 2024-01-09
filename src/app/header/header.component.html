@@ -1,10 +1,10 @@
 <header>
     <nav>
-        <ul class="btn-container">
-            <li>
+        <ul>
+            <li >
                 <button  type= "button" *ngFor="let country of selectedCountries" (click)="redirectToLeagues(country)" 
                 [attr.id]="country.name +'Select'" routerLinkActive="router-active">
-                    {{country.name}}
+                    {{country.name | titlecase}}
                 </button>
             </li>
         </ul>

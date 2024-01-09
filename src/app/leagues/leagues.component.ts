@@ -18,7 +18,6 @@ export class LeaguesComponent implements OnInit {
   
   }
   ngOnInit(): void {
-   
   this.route.params.subscribe(routeParams => {
     this.spinner.show()
     this.countryName = routeParams['id']
@@ -32,13 +31,11 @@ export class LeaguesComponent implements OnInit {
   getStandings(){
     this.spinner.show();
     var itemsFromStorage= localStorage.getItem(this.countryName)
-
-    if(!itemsFromStorage || itemsFromStorage==null) {
+    if(!itemsFromStorage) {
       this.appService.getStandingByCountry(this.countryName).subscribe(data=>{
         localStorage.setItem(this.countryName, JSON.stringify(data.response));
         this.selectedLeagues=data.response
         this.spinner.hide()
-
       })
     }
   else {

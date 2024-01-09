@@ -7,8 +7,8 @@ import {CountryModel,ApiCountry} from './shared/country.model'
 
 
 const headers = new HttpHeaders({
-  'x-rapidapi-host': 'v3.football.api-sports.io',
-  "x-rapidapi-key": "24bf4e46e9faadeef089d536f10aeb08",
+  'x-rapidapi-host': CONSTANTS.API_HOST,
+  "x-rapidapi-key": CONSTANTS.API_KEY,
 });
 import * as CONSTANTS from '././shared/constants';
 
@@ -17,8 +17,12 @@ import * as CONSTANTS from '././shared/constants';
 })
 export class AppService {
   public league_id!: number;
+  public currentYear:number
   public configUrl: string = CONSTANTS.configUrl
-  constructor(private http: HttpClient, private route: ActivatedRoute) { }
+  constructor(private http: HttpClient, private route: ActivatedRoute) {
+    this.currentYear = new Date().getFullYear()-1
+    console.log("year",this.currentYear)
+   }
 
   // getLeagues() {
   //   let url = `${this.configUrl}leagues`;
@@ -29,26 +33,30 @@ export class AppService {
     return this.http.get<ApiCountry>(url, { headers });
   }
   getTeamGames(team_id: number) {
-    let params = new HttpParams().append("team", team_id).append("season", 2023);
+    let params = new HttpParams().append("team", team_id).append("season", this.currentYear);
     let url = `${this.configUrl}fixtures`;
     return this.http.get<ApiTeams>(url, { headers, params });
   }
   getStandingByCountry(country: string) {
-    if (country == 'England' || country == 'england') {
+    country= country.toLowerCase()
+    
+    if (country == 'england') {
       this.league_id = CONSTANTS.england
-    } else if (country == 'Spain' || country == 'spain') {
+    } else if (country == 'spain') {
       this.league_id = CONSTANTS.spain
     }
-    else if (country == 'France' || country == 'france') {
+    else if (country == 'france') {
       this.league_id = CONSTANTS.france
     }
-    else if (country == 'Germany' || country == 'germany') {
+    else if (country == 'germany') {
       this.league_id = CONSTANTS.germany
     }
-    else if (country == 'Italy' || country == 'italy') {
+    else if (country == 'italy') {
       this.league_id = CONSTANTS.italy
     }
-    let params = new HttpParams().append("league", this.league_id).append("season", 2023);
+    // using current year - 1 beacause there is no data for year 2024
+    let year
+    let params = new HttpParams().append("league", this.league_id).append("season", this.currentYear);
     let url = `${this.configUrl}standings`;
     return this.http.get<ApiStanding>(url, { headers, params });
   }
