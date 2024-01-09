@@ -1,12 +1,12 @@
-<header>
+<header class="alignCenter">
     <nav>
         <ul>
-            <li >
-                <button  type= "button" *ngFor="let country of selectedCountries" (click)="redirectToLeagues(country)" 
-                [attr.id]="country.name +'Select'" routerLinkActive="router-active">
+            <li>
+                <button *ngFor="let country of selectedCountries" (click)="redirectToLeagues(country)" 
+                [attr.id]="country +'Select'" routerLinkActive="router-active">
                     {{country.name | titlecase}}
                 </button>
             </li>
         </ul>
     </nav> 
-</header>
+  </header>

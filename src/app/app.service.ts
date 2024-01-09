@@ -20,8 +20,9 @@ export class AppService {
   public currentYear:number
   public configUrl: string = CONSTANTS.configUrl
   constructor(private http: HttpClient, private route: ActivatedRoute) {
+    // using current year - 1 because there is no data for year 2024
     this.currentYear = new Date().getFullYear()-1
-    console.log("year",this.currentYear)
+    console.log("year",this.currentYear) 
    }
 
   // getLeagues() {
@@ -54,8 +55,6 @@ export class AppService {
     else if (country == 'italy') {
       this.league_id = CONSTANTS.italy
     }
-    // using current year - 1 beacause there is no data for year 2024
-    let year
     let params = new HttpParams().append("league", this.league_id).append("season", this.currentYear);
     let url = `${this.configUrl}standings`;
     return this.http.get<ApiStanding>(url, { headers, params });

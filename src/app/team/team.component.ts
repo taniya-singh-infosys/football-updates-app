@@ -38,7 +38,6 @@ export class TeamComponent implements OnInit {
   else {
     this.teams=JSON.parse(teamsFromStorage)
     this.spinner.hide()
-
   }
   }
 }

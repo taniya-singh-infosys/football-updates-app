@@ -7,7 +7,7 @@ const routes: Routes = [
   { path: 'leagues/:id', component: LeaguesComponent },
   { path: 'leagues/:id/:teamId', component: TeamComponent},
 
-  { path: '**', redirectTo: '/leagues/England', pathMatch: 'full'},
+  { path: '**', redirectTo: '/leagues/england', pathMatch: 'full'},
 ];
 
 @NgModule({
