@@ -18,7 +18,7 @@
             <ng-container *ngFor="let league of selectedLeagues[0].league?.standings; index as i;">
                 <tbody>
                  <tr *ngFor="let st of league; index as j;"> 
-                    <th >{{j}}</th>
+                    <th >{{j+1}}</th>
                     <td class="logo"><img [src]="st.team?.logo" alt="Team Logo" *ngIf="st.team?.logo" /></td>
                     <td style="cursor: pointer;" (click)="showTeamDetails(st?.team?.id)">{{st?.team?.name}}</td>
                     <td>{{st?.all?.played}}</td>
